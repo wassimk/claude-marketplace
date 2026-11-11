@@ -1,0 +1,1 @@
+{ "name": "inline-media", "version": "0.7.0", "description": "Shows media inline in the transcript: images Claude reads, and videos as a poster that plays in QuickTime", "types": "./types/index.d.ts" }
