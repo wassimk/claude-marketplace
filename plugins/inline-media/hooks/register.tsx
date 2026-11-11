@@ -138,7 +138,7 @@ export const register: Register = on => {
     )
   }
 
-  on('ui.render', { component: 'ToolUse' }, async ($, e, next) => {
+  on('ui.render', { component: 'ToolUse', props: { tool: 'Read' } }, async ($, e, next) => {
     const row = await next(e)
     if (e.surface !== 'terminal') {
       return row
@@ -246,7 +246,7 @@ export const register: Register = on => {
     return { result: `Showing ${info.name} inline (${seconds}s). The user can press the button to play it in QuickTime Player.` }
   }).catch(($, e, next) => ({ result: `The video player failed: ${JSON.stringify(next.error)}`, isError: true as const }))
 
-  on('ui.render', { component: 'ToolUse' }, async ($, e, next) => {
+  on('ui.render', { component: 'ToolUse', props: { tool: VIDEO_TOOL } }, async ($, e, next) => {
     const row = await next(e)
     if (e.surface !== 'terminal' || e.props.tool !== VIDEO_TOOL || e.props.isRunning || e.props.isErrored) {
       return row
