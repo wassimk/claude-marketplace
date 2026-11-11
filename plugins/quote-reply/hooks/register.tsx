@@ -1,10 +1,10 @@
 import { atom, read, update } from 'claude-code'
 import type { Register } from 'claude-code'
 
-// The text last quoted, so c types normally until something new is highlighted.
+// The text last quoted, so r types normally until something new is highlighted.
 const lastQuoted = atom({ plugin: 'quote-reply', key: 'lastQuoted' } as const, '')
 
-// Off while testing the terminal's own highlight behavior; true turns the c shortcut back on.
+// false turns the r shortcut off without unloading the mod.
 const ENABLED = true
 
 function asQuote(text: string) {
@@ -26,7 +26,7 @@ export const register: Register = on => {
     return
   }
 
-  // The selection the last keystroke saw, so `c` only quotes as the first key after a new highlight.
+  // The selection the last keystroke saw, so `r` only quotes as the first key after a new highlight.
   let seenAtLastKey = ''
 
   on('prompt.edit', async ($, e, next) => {
@@ -38,8 +38,8 @@ export const register: Register = on => {
     const isFresh = sel !== '' && sel !== seenAtLastKey && sel !== (await read($, lastQuoted))
     seenAtLastKey = sel
 
-    const isBareC = e.inputText === 'c' && !e.key.ctrl && !e.key.meta
-    if (!isFresh || !isBareC) {
+    const isBareR = e.inputText === 'r' && !e.key.ctrl && !e.key.meta
+    if (!isFresh || !isBareR) {
       return next(e)
     }
 
