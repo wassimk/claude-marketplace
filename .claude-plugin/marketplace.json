@@ -10,7 +10,7 @@
       "name": "inline-media",
       "source": "./plugins/inline-media",
       "description": "Shows media inline in the transcript: images Claude reads, with click-to-expand, and videos as a poster that plays in QuickTime",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "keywords": ["images", "video", "kitty", "terminal", "mod"],
       "category": "productivity"
     },

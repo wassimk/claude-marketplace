@@ -205,7 +205,7 @@ export const register: Register = on => {
         properties: { file_path: { type: 'string', description: 'Absolute path to the video file' } },
         required: ['file_path'],
       },
-      isDeferred: false,
+      isDeferred: true,
     })
     return next(e)
   })
