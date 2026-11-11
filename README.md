@@ -45,9 +45,9 @@ Only set it in a terminal that supports kitty graphics. The [environment variabl
 
 ### quote-reply
 
-Highlight text in the transcript with the mouse, then press `c`. The text lands in your prompt as a `>` quote with the cursor below it, ready for your reply. Repeat for as many passages as you like, then press Return.
+Highlight text in the transcript with the mouse, then press `r`. The text lands in your prompt as a `>` quote with the cursor below it, ready for your reply. Repeat for as many passages as you like, then press Return.
 
-`c` only quotes when it's the first key after a new highlight, so typing normally is unaffected. Requires fullscreen rendering (`/tui fullscreen`).
+`r` only quotes when it's the first key after a new highlight, so typing normally is unaffected. Requires fullscreen rendering (`/tui fullscreen`).
 
 ### statusline
 
