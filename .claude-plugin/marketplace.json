@@ -1,0 +1,26 @@
+{
+  "name": "wassimk",
+  "owner": { "name": "wassimk" },
+  "metadata": {
+    "description": "Wassim's Claude Code plugins and mods",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "inline-media",
+      "source": "./plugins/inline-media",
+      "description": "Shows media inline in the transcript: images Claude reads, with click-to-expand, and videos as a poster that plays in QuickTime",
+      "version": "0.7.0",
+      "keywords": ["images", "video", "kitty", "terminal", "mod"],
+      "category": "productivity"
+    },
+    {
+      "name": "quote-reply",
+      "source": "./plugins/quote-reply",
+      "description": "Highlight text in the transcript and press c to quote it into your prompt as a > block, then type your reply",
+      "version": "0.3.0",
+      "keywords": ["reply", "quote", "selection", "prompt", "mod"],
+      "category": "productivity"
+    }
+  ]
+}
