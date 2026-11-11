@@ -1,0 +1,1 @@
+{ "name": "quote-reply", "version": "0.3.0", "description": "Highlight text in the transcript, press c, and it lands in the prompt as a > quote to answer", "types": "./types/index.d.ts" }
