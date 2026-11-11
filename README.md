@@ -9,6 +9,7 @@ Add a plugin from a Claude Code terminal session:
 ```
 /plugin install inline-media --marketplace wassimk/claude-marketplace
 /plugin install quote-reply --marketplace wassimk/claude-marketplace
+/plugin install statusline --marketplace wassimk/claude-marketplace
 ```
 
 From a shell:
@@ -35,3 +36,15 @@ Requires a terminal that draws kitty graphics (kitty, Ghostty, or another termin
 Highlight text in the transcript with the mouse, then press `c`. The text lands in your prompt as a `>` quote with the cursor below it, ready for your reply. Repeat for as many passages as you like, then press Return.
 
 `c` only quotes when it's the first key after a new highlight, so typing normally is unaffected. Requires fullscreen rendering (`/tui fullscreen`).
+
+### statusline
+
+A simple status line:
+
+```
+claude-marketplace(main) · Opus 5.5 · Context: 61% · Limits: 5h:47% 7d:83%
+```
+
+Folder and git branch, model, context usage (yellow from 50%, red from 80%), and the 5-hour and 7-day rate limits on plans that have them. Each segment is skipped when Claude Code doesn't send it. Inside herdr it also renames the pane to the session name.
+
+After installing, run `/statusline:install` to point your `statusLine` setting at the script. The setting uses the marketplace's own checkout, so it keeps working if you uninstall the plugin afterwards, and it stops working if you remove the marketplace. `/statusline:uninstall` removes the setting. Requires Python 3 and git.
