@@ -30,6 +30,18 @@ Shows media inline in the transcript.
 
 Requires a terminal that draws kitty graphics (kitty, Ghostty, or another terminal with kitty graphics support), fullscreen rendering for some terminals, and macOS for `sips`, `ffmpeg`/`ffprobe` (video) and QuickTime.
 
+If images show up as a dim `[image WxH]` label even though your terminal supports kitty graphics, Claude Code didn't recognize the terminal. Set `CLAUDE_CODE_FORCE_TERMINAL_IMAGES=1` in the `env` block of your `~/.claude/settings.json` and restart Claude Code:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_FORCE_TERMINAL_IMAGES": "1"
+  }
+}
+```
+
+Only set it in a terminal that supports kitty graphics. The [environment variables docs](https://code.claude.com/docs/en/env-vars) link to the list of terminals where it doesn't belong.
+
 ### quote-reply
 
 Highlight text in the transcript with the mouse, then press `c`. The text lands in your prompt as a `>` quote with the cursor below it, ready for your reply. Repeat for as many passages as you like, then press Return.
