@@ -1,0 +1,6 @@
+{
+  "name": "statusline",
+  "version": "0.1.0",
+  "description": "A simple status line: folder and branch, model, context usage, and rate limits on plans that have them",
+  "repository": "https://github.com/wassimk/claude-marketplace"
+}
