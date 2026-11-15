@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Claude Code status line: folder and branch, model, context, rate limits.
+"""Claude Code status line: folder and branch, model and effort, context, rate limits.
 
-Prints `folder(branch) · model · Context: N% · Limits: 5h:N% 7d:N%`. Every
+Prints `folder(branch) · model (effort) · Context: N% · Limits: 5h:N% 7d:N%`. Every
 segment comes from the JSON Claude Code sends on stdin and is skipped when
-that field is missing, so the line adapts to the plan: rate limits show only
-on plans that have them.
+that field is missing, so the line adapts to the plan and model: rate limits
+show only on plans that have them, and effort only on models that support it.
 
 When running inside herdr (HERDR_ENV=1), it also renames the herdr pane to
 the Claude session name.
@@ -49,8 +49,9 @@ def build_statusline(hook_input):
         parts.append(f"{cwd_name}({branch})" if branch else cwd_name)
 
     model = (hook_input.get("model") or {}).get("display_name")
+    effort = (hook_input.get("effort") or {}).get("level")
     if model:
-        parts.append(model)
+        parts.append(f"{model} ({effort})" if effort else model)
 
     used_pct = (hook_input.get("context_window") or {}).get("used_percentage")
     if used_pct is not None:
