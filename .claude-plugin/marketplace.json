@@ -39,8 +39,8 @@
     {
       "name": "statusline",
       "source": "./plugins/statusline",
-      "description": "A simple status line: folder and branch, model, context usage, and rate limits on plans that have them",
-      "version": "0.1.0",
+      "description": "A simple status line: folder and branch, model and effort level, context usage, and rate limits on plans that have them",
+      "version": "0.2.0",
       "keywords": [
         "statusline",
         "status line",
